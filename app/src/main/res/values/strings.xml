@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">REPay</string>
+    <string name="re_pay">RE-PAY</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="re_pay_toolbar_text">RE-Pay</string>
+    <string name="registered_mobile_no">Registered Mobile no.</string>
+    <string name="link_your_phone">Link your UPI account with RE-Pay for seamless refueling experience. Enter your mobile no. and tap on \'Generate OTP\' to receive one time password (OTP) on your mobile.</string>
+    <string name="link_your_upi_account">Link your UPI account</string>
+    <string name="country_code">+91</string>
+    <string name="description_enter_otp">Enter the one time password (OTP) sent to your mobile.</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="generate_otp">GENERATE OTP</string>
+    <string name="verify">verify</string>
+    <string name="registered_successfully">Registered successfully</string>
+    <string name="ok">OK</string>
+    <string name="rs_symbol">₹</string>
+    <string name="myvoucher_desc">Voucher is valid for 48 hours. If expired,\namount will be refunded to your bank account</string>
+    <string name="navigate_to_nearby_fuel_station">navigate to nearby fuel station</string>
 </resources>
