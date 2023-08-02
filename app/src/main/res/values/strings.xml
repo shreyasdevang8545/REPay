@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">REPay</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="need_help">Need Help?</string>
+    <string name="further_assistance">For further assistance contact us at</string>
+    <string name="help_number">98XXX XXXXX</string>
+    <string name="done">DONE</string>
+    <string name="nearby_fuel_station">NAVIGATE TO NEARBY FUEL STATION</string>
+    <string name="try_again_later">Please try again later. If money is debited, you\n will get refund within the next 48 hrs.</string>
+    <string name="order_id_desc">Order ID-</string>
+    <string name="rs_1000">1,000</string>
+    <string name="payment_failed">Payment failed</string>
+    <string name="voucher_validity">Voucher is valid for 48 hours. If expired,\nthe amount will be refunded to your bank account.</string>
+    <string name="show_voucher">Show the voucher code at BPCL fuel station\n across India to refuel</string>
+    <string name="validity_date">Valid till </string>
+    <string name="voucher_code">Voucher Code:</string>
+    <string name="transaction_id">Transaction ID-</string>
+    <string name="rs_symbol">₹ </string>
+    <string name="my_vouchers">My Vouchers</string>
+    <string name="transaction_nhistory">Transaction\nHistory</string>
+    <string name="add_voucher">ADD VOUCHER</string>
+    <string name="select_or_enter_amount">Select or enter amount</string>
+    <string name="enter_amount">Enter amount between ₹50 and ₹5,000</string>
+    <string name="add_rs_100">+ 100</string>
+    <string name="add_rs_500">+ 500</string>
+    <string name="add_rs_1000">+ 1000</string>
+    <string name="add_rs_2000">+ 2000</string>
+    <string name="pay_now">PAY NOW</string>
+    <string name="order_id_num">10987654321</string>
+    <string name="payment_successful">Payment successful</string>
+    <string name="proceed">PROCEED</string>
+    <string name="enter_upi_pin">Enter 6 Digit UPI PIN</string>
+    <string name="success">Success</string>
 </resources>
