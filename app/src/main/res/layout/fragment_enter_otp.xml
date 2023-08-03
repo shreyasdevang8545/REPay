@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".RequestOtpFragment"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/interbold"
+        android:text="@string/link_your_upi_account"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/interregular"
+        android:text="@string/description_enter_otp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginEnd="23dp"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/interregular"
+        android:text="@string/enter_otp"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
+
+    <LinearLayout
+        android:id="@+id/get_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+
+        <EditText
+            android:id="@+id/otpCode1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="80dp"
+            android:background="@drawable/edittext_bg"
+            android:fontFamily="@font/interregular"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:inputType="numberPassword"
+            android:gravity="center"
+            android:maxLength="1"
+            android:textSize="30sp"
+            android:imeOptions="actionNext"/>
+
+        <EditText
+            android:id="@+id/otpCode2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="80dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/edittext_bg"
+            android:fontFamily="@font/interregular"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:inputType="numberPassword"
+            android:gravity="center"
+            android:maxLength="1"
+            android:textSize="30sp"
+            android:nextFocusForward="@id/otpCode3"/>
+
+        <EditText
+            android:id="@+id/otpCode3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="80dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/edittext_bg"
+            android:fontFamily="@font/interregular"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:inputType="numberPassword"
+            android:gravity="center"
+            android:maxLength="1"
+            android:textSize="30sp"
+            android:nextFocusRight="@id/otpCode4"/>
+
+        <EditText
+            android:id="@+id/otpCode4"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="80dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/edittext_bg"
+            android:fontFamily="@font/interregular"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:inputType="numberPassword"
+            android:gravity="center"
+            android:maxLength="1"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Resend OTP in 0:55"
+        android:fontFamily="@font/interregular"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:gravity="center"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/verifyBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="220dp"
+        android:background="@drawable/btn_button"
+        android:fontFamily="@font/montserratregular"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="@string/verify"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:cornerRadius="0dp" />
+
+
+</LinearLayout>

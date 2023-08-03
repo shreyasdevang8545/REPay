@@ -2,6 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="desc">#A2A2A2</color>
-
+    <color name="splash_text">#E53517</color>
+    <color name="my_light_primary">#FF000000</color>
+    <color name="toolbar_title">#FFFFFF</color>
+    <color name="edittext_bg_color">#717171</color>
+    <color name="btn_btn_color">#DA291C</color>
+    <color name="btn_bg_color">#57100B</color>
+    <color name="green">#78BA64</color>
+    <color name="description">#D9D9D9</color>
+    <color name="desc">#A7A7A7</color>
 </resources>

@@ -3,20 +3,25 @@ package com.example.repay
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.repay.databinding.FragmentUpiPinBinding
+import androidx.fragment.app.Fragment
+import com.example.repay.databinding.FragmentEnterOtpBinding
 
-class UpiPinFragment : Fragment(R.layout.fragment_upi_pin) {
-    private var mainBinding:FragmentUpiPinBinding?=null
-    private val binding get() = mainBinding
+class RequesOtpEnterFragment : Fragment(R.layout.fragment_enter_otp) {
+    private var mainBinding: FragmentEnterOtpBinding? = null
+    private val binding get() = mainBinding!!
+    private var selectBankFragment = SelectBankFragment()
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        mainBinding = FragmentEnterOtpBinding.inflate(inflater, container, false)
+        return binding.root
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mainBinding = FragmentUpiPinBinding.bind(view)
 
-        binding?.otpCode1?.addTextChangedListener(object : TextWatcher{
+        binding.otpCode1.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 //Do nothing
             }
@@ -27,12 +32,14 @@ class UpiPinFragment : Fragment(R.layout.fragment_upi_pin) {
 
             override fun afterTextChanged(s: Editable?) {
                 if (s?.length == 1) {
-                    binding!!.otpCode2.requestFocus()
+                    binding.otpCode2.requestFocus()
                 }
             }
 
         })
-        binding?.otpCode2?.addTextChangedListener(object : TextWatcher{
+
+
+        binding.otpCode2.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 //Do nothing
             }
@@ -43,12 +50,14 @@ class UpiPinFragment : Fragment(R.layout.fragment_upi_pin) {
 
             override fun afterTextChanged(s: Editable?) {
                 if (s?.length == 1) {
-                    binding!!.otpCode3.requestFocus()
+                    binding.otpCode3.requestFocus()
                 }
             }
 
         })
-        binding?.otpCode3?.addTextChangedListener(object : TextWatcher{
+
+
+        binding.otpCode3.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 //Do nothing
             }
@@ -59,12 +68,14 @@ class UpiPinFragment : Fragment(R.layout.fragment_upi_pin) {
 
             override fun afterTextChanged(s: Editable?) {
                 if (s?.length == 1) {
-                    binding!!.otpCode4.requestFocus()
+                    binding.otpCode4.requestFocus()
                 }
             }
 
         })
-        binding?.otpCode4?.addTextChangedListener(object : TextWatcher{
+
+
+        binding.otpCode4.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 //Do nothing
             }
@@ -74,27 +85,17 @@ class UpiPinFragment : Fragment(R.layout.fragment_upi_pin) {
             }
 
             override fun afterTextChanged(s: Editable?) {
-                if (s?.length == 1) {
-                    binding!!.otpCode5.requestFocus()
-                }
-            }
-
-        })
-        binding?.otpCode5?.addTextChangedListener(object : TextWatcher{
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 //Do nothing
             }
 
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                //Do nothing
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-                if (s?.length == 1) {
-                    binding!!.otpCode6.requestFocus()
-                }
-            }
-
         })
+
+        binding.verifyBtn.setOnClickListener {
+            var transactionManager = requireActivity().supportFragmentManager
+            var transaction = transactionManager.beginTransaction()
+            transaction.replace(R.id.fragment_container, selectBankFragment)
+            transaction.commit()
+        }
+
     }
 }

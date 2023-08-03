@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".RequestOtpFragment"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/interbold"
+        android:text="@string/link_your_upi_account"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/interregular"
+        android:text="@string/link_your_phone"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginEnd="23dp"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/interregular"
+        android:text="@string/registered_mobile_no"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
+
+    <LinearLayout
+        android:id="@+id/get_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext_bg"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/interregular"
+            android:text="@string/country_code"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextField_phonenumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/interregular"
+            android:inputType="number"
+            android:lines="1"
+            android:maxLength="10"
+            android:background="@null"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/generate_otp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="250dp"
+        android:background="@drawable/btn_button"
+        android:fontFamily="@font/montserratregular"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="GENERATE OTP"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:cornerRadius="0dp" />
+
+
+</LinearLayout>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    tools:context=".MyVoucherQrDisplay">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+        
+        <ImageView
+            android:src="@drawable/myvoucher_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/myvoucherFragment_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserratbold"
+                        android:padding="5dp"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:text="BPCL" />
+
+                    <TextView
+                        android:id="@+id/myvoucherFragment_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserratbold"
+                        android:padding="5dp"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:text="Code : 123456" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:fontFamily="@font/montserratbold"
+                            android:textColor="@color/white"
+                            android:layout_marginEnd="5dp"
+                            android:textSize="24sp"
+                            android:text="@string/rs_symbol" />
+
+                        <TextView
+                            android:id="@+id/myvoucherFragment_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:fontFamily="@font/montserratbold"
+                            android:textColor="@color/white"
+                            android:layout_marginEnd="5dp"
+                            android:textSize="24sp"
+                            android:text="1000" />
+
+                    </LinearLayout>
+
+
+
+
+                    <TextView
+                        android:id="@+id/myvoucherFragment_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:fontFamily="@font/montserratregular"
+                        android:padding="5dp"
+                        android:textColor="@color/green"
+                        android:textSize="12sp"
+                        android:text="Valid - 23 Jun 2023" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="30dp"
+                android:src="@drawable/vector" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/montserratregular"
+                android:gravity="center"
+                android:text="@string/myvoucher_desc"
+                android:textColor="@color/description"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="15dp"
+                android:fontFamily="@font/montserratregular"
+                android:gravity="center"
+                android:text="For fueling related queries call us at 1800224344"
+                android:textColor="@color/description"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/navigateBtn"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/btn_button"
+        android:fontFamily="@font/montserratbold"
+        android:text="@string/navigate_to_nearby_fuel_station"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edittext_bg"
+        android:fontFamily="@font/montserratbold"
+        android:text="download qr code"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navigateBtn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
