@@ -32,4 +32,16 @@
     <string name="proceed">PROCEED</string>
     <string name="enter_upi_pin">Enter 6 Digit UPI PIN</string>
     <string name="success">Success</string>
+    <string name="user_holding_a_phone">user holding a phone</string>
+    <string name="registered_mobile_no">Registered Mobile no.</string>
+    <string name="mobile_numb">9836524424</string>
+    <string name="upi_desc">UPI</string>
+    <string name="bank_account_desc">Bank Account</string>
+    <string name="bank_account_num">XXXXXXX3658</string>
+    <string name="upi_num">XXXXXXXXXX@apl</string>
+    <string name="edit_button">edit button</string>
+    <string name="right_arrow">right arrow</string>
+    <string name="settings_desc">Modify bank account, view profile\ninformation</string>
+    <string name="settings_name">Account Settings</string>
+    <string name="transaction_id_head">Transaction ID:</string>
 </resources>

@@ -7,28 +7,6 @@
     tools:context=".vouchers_cardview"
     android:background="@color/black">
 
-    <TextView
-        android:id="@+id/tv_rePay"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="RE-Pay"
-        android:fontFamily="@font/intersemibold"
-        android:textSize="@dimen/_20ssp"
-        android:gravity="center"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/cv_my_vouchers"
-        android:layout_marginTop="@dimen/_20sdp"/>
-
-    <ImageView
-        android:layout_width="@dimen/_20sdp"
-        android:layout_height="@dimen/_20sdp"
-        android:src="@drawable/settings"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginEnd="@dimen/_20sdp"
-        android:layout_marginTop="28dp" />
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_my_vouchers"
         android:layout_width="match_parent"
@@ -39,7 +17,7 @@
         android:layout_marginBottom="@dimen/_20sdp"
         app:cardElevation="10dp"
         app:cardPreventCornerOverlap="true"
-        app:layout_constraintTop_toBottomOf="@id/tv_rePay"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -157,12 +135,12 @@
         android:id="@+id/cv_transaction_history"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
         android:layout_marginBottom="20dp"
         app:cardElevation="10dp"
-        app:cardMaxElevation="12dp"
+        app:cardMaxElevation="@dimen/_12sdp"
         app:cardPreventCornerOverlap="true"
         app:layout_constraintTop_toBottomOf="@id/cv_my_vouchers"
         app:layout_constraintStart_toStartOf="parent"
@@ -176,31 +154,23 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/image10"
+                android:src="@drawable/transaction_history_background"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                />
+                android:contentDescription="@string/user_holding_a_phone" />
 
             <ImageView
                 android:id="@+id/rs_surround"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginEnd="20dp"
-                android:src="@drawable/vector"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:src="@drawable/ic_rupees_symbol"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                />
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="40dp"
-                android:src="@drawable/rupees"
-                app:layout_constraintStart_toStartOf="@+id/rs_surround"
-                app:layout_constraintEnd_toEndOf="@+id/rs_surround"
-                app:layout_constraintTop_toTopOf="@+id/rs_surround"
-                app:layout_constraintBottom_toBottomOf="@+id/rs_surround"/>
+                android:contentDescription="@null" />
 
             <TextView
                 android:id="@+id/tv_transaction_history"
@@ -212,8 +182,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginStart="30dp"
-                android:lineSpacingExtra="5sp"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:lineSpacingExtra="@dimen/_5ssp"
                 android:textSize="@dimen/_15ssp" />
 
 

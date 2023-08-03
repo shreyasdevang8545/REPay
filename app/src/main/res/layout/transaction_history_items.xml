@@ -12,13 +12,13 @@
 
         <ImageView
             android:id="@+id/logo"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
             android:src="@drawable/bpcl_logo"
             app:layout_constraintTop_toTopOf="@id/transaction_name"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="@+id/transaction_id_linear_layout"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="@dimen/_10sdp"
             />
 
         <TextView
@@ -28,12 +28,11 @@
             android:fontFamily="@font/intersemibold"
             android:text="BPCL"
             android:textColor="@color/white"
-            android:textSize="15sp"
+            android:textSize="@dimen/_12ssp"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintStart_toEndOf="@+id/logo"
-             />
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintStart_toEndOf="@+id/logo" />
 
         <TextView
             android:id="@+id/transaction_time"
@@ -42,11 +41,11 @@
             android:fontFamily="@font/interregular"
             tools:text="14 Jul 2023, 11:45 PM"
             android:textColor="@color/white"
-            android:textSize="12sp"
+            android:textSize="@dimen/_10ssp"
             app:layout_constraintTop_toBottomOf="@+id/transaction_name"
             app:layout_constraintStart_toEndOf="@+id/logo"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_4sdp"/>
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/transaction_id_linear_layout"
@@ -60,13 +59,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/interregular"
-                android:text="Transaction ID: "
+                android:text="@string/transaction_id_head"
                 android:textColor="@color/white"
-                android:textSize="12sp"
+                android:textSize="@dimen/_10ssp"
                 app:layout_constraintTop_toBottomOf="@+id/transaction_time"
                 app:layout_constraintStart_toEndOf="@+id/logo"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_8sdp"/>
             <TextView
                 android:id="@+id/transaction_id"
                 android:layout_width="wrap_content"
@@ -74,40 +73,66 @@
                 android:fontFamily="@font/interregular"
                 tools:text="23985641"
                 android:textColor="@color/white"
-                android:textSize="12sp"
+                android:textSize="@dimen/_10ssp"
                 app:layout_constraintTop_toBottomOf="@+id/transaction_time"
                 app:layout_constraintStart_toEndOf="@+id/logo"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_8sdp" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <TextView
-            android:id="@+id/transaction_amt"
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/intersemibold"
-            android:text="\u20B9 1,000"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            app:layout_constraintTop_toTopOf="@id/transaction_time"
-            app:layout_constraintBottom_toBottomOf="@id/transaction_time"
-            app:layout_constraintStart_toEndOf="@+id/transaction_time"
-            android:layout_marginStart="@dimen/_90sdp"
-            />
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/transaction_status"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/interregular"
-            android:text="@string/success"
-            android:textColor="#78BA64"
-            android:textSize="@dimen/_12ssp"
-            app:layout_constraintTop_toBottomOf="@+id/transaction_amt"
-            app:layout_constraintStart_toStartOf="@id/transaction_amt"
-            app:layout_constraintEnd_toEndOf="@id/transaction_amt"
-            android:layout_marginTop="5dp"
-            />
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/amount_linear_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/transaction_time"
+                app:layout_constraintStart_toEndOf="@id/transaction_id_linear_layout"
+                app:layout_constraintTop_toTopOf="@id/transaction_time">
+
+                <TextView
+                    android:id="@+id/tv_rs_symbol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/intersemibold"
+                    android:text="@string/rs_symbol"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15ssp" />
+
+                <TextView
+                    android:id="@+id/transaction_amt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/intersemibold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15ssp"
+                    tools:text="1000" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <TextView
+                android:id="@+id/transaction_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:fontFamily="@font/interregular"
+                android:text="@string/success"
+                android:textColor="#78BA64"
+                android:textSize="@dimen/_12ssp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/amount_linear_layout" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -10,25 +10,26 @@
         android:layout_height="match_parent">
 
         <ImageView
+            android:contentDescription="@null"
             android:id="@+id/settings_logo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/account_settings_icon"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/ic_profile_logo"
             app:layout_constraintTop_toTopOf="@+id/settings_name"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="@dimen/_15sdp"
             app:layout_constraintBottom_toBottomOf="@+id/settings_desc"
             />
         <TextView
             android:id="@+id/settings_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:text="Account Settings"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="@string/settings_name"
             android:fontFamily="@font/interregular"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintStart_toEndOf="@+id/settings_logo"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -36,23 +37,24 @@
             android:id="@+id/settings_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="7dp"
-            android:text="Modify bank account, view profile\ninformation"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="@string/settings_desc"
             android:fontFamily="@font/interregular"
-            android:textColor="#8B8B8B"
-            android:textSize="12sp"
+            android:textColor="@color/desc"
+            android:textSize="@dimen/_10ssp"
             app:layout_constraintStart_toEndOf="@+id/settings_logo"
             app:layout_constraintTop_toBottomOf="@+id/settings_name"/>
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/arrow_right"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/ic_arrow_right"
             app:layout_constraintStart_toEndOf="@id/settings_desc"
-            android:layout_marginStart="70dp"
+            android:layout_marginStart="@dimen/_50sdp"
             app:layout_constraintTop_toTopOf="@+id/settings_desc"
-            app:layout_constraintBottom_toBottomOf="@+id/settings_desc"/>
+            app:layout_constraintBottom_toBottomOf="@+id/settings_desc"
+            android:contentDescription="@string/right_arrow" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

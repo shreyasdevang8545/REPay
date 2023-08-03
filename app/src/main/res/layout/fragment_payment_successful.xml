@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#272727"
+    android:background="@color/black"
     tools:context=".PaymentSuccessfulFragment">
 
 
@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/success"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="@dimen/_15sdp"/>
 
     <TextView
         android:id="@+id/tv_success_msg"
@@ -27,9 +27,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/payment_successful"
         android:fontFamily="@font/interregular"
-        android:textSize="20sp"
+        android:textSize="@dimen/_15ssp"
         android:textColor="@color/white"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="@dimen/_12sdp"/>
 
 <androidx.appcompat.widget.LinearLayoutCompat
     android:id="@+id/rs_linear_layout"
@@ -47,10 +47,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/rs_symbol"
-        android:textSize="30sp"
+        android:textSize="@dimen/_22ssp"
         android:textColor="@color/white"
         android:fontFamily="@font/interbold"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/_8sdp"
         />
     <TextView
         android:id="@+id/tv_amount"
@@ -59,10 +59,10 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_success_msg"
         app:layout_constraintStart_toEndOf="@+id/tv_rs_symbol"
         tools:text="@string/rs_1000"
-        android:textSize="30sp"
+        android:textSize="@dimen/_22ssp"
         android:textColor="@color/white"
         android:fontFamily="@font/interbold"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/_8sdp"
         />
 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -83,9 +83,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:text="@string/transaction_id"
             android:fontFamily="@font/interregular"
-            android:textSize="15sp"
+            android:textSize="@dimen/_12ssp"
             android:textColor="@color/white"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="@dimen/_12sdp"/>
 
         <TextView
             android:id="@+id/transaction_id"
@@ -94,9 +94,9 @@
             app:layout_constraintTop_toBottomOf="@+id/rs_linear_layout"
             tools:text="10987654321"
             android:fontFamily="@font/interregular"
-            android:textSize="15sp"
+            android:textSize="@dimen/_12ssp"
             android:textColor="@color/white"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="@dimen/_12sdp"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 <androidx.appcompat.widget.LinearLayoutCompat
@@ -116,9 +116,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/voucher_code"
         android:fontFamily="@font/interregular"
-        android:textSize="15sp"
+        android:textSize="@dimen/_12ssp"
         android:textColor="@color/white"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="@dimen/_8sdp"/>
     <TextView
         android:id="@+id/voucher_code"
         android:layout_width="wrap_content"
@@ -128,9 +128,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="126897"
         android:fontFamily="@font/interregular"
-        android:textSize="15sp"
+        android:textSize="@dimen/_12ssp"
         android:textColor="@color/white"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="@dimen/_8sdp"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -151,9 +151,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/validity_date"
         android:fontFamily="@font/interregular"
-        android:textSize="12sp"
-        android:textColor="#A7A7A7"
-        android:layout_marginTop="10dp"/>
+        android:textSize="@dimen/_10ssp"
+        android:textColor="@color/desc"
+        android:layout_marginTop="@dimen/_8sdp"/>
     <TextView
         android:id="@+id/validity_date"
         android:layout_width="wrap_content"
@@ -163,9 +163,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="30 Mar 2023"
         android:fontFamily="@font/interregular"
-        android:textSize="12sp"
-        android:textColor="#A7A7A7"
-        android:layout_marginTop="10dp"/>
+        android:textSize="@dimen/_10ssp"
+        android:textColor="@color/desc"
+        android:layout_marginTop="@dimen/_8sdp"/>
 </androidx.appcompat.widget.LinearLayoutCompat>
 
     <TextView
@@ -177,8 +177,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/show_voucher"
         android:fontFamily="@font/interregular"
-        android:textSize="12sp"
-        android:textColor="#A7A7A7"
+        android:textSize="@dimen/_10ssp"
+        android:textColor="@color/desc"
         android:layout_marginTop="10dp"
         android:gravity="center"/>
 
@@ -191,9 +191,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/voucher_validity"
         android:fontFamily="@font/interregular"
-        android:textSize="12sp"
-        android:textColor="#A7A7A7"
-        android:layout_marginTop="10dp"
+        android:textSize="@dimen/_10ssp"
+        android:textColor="@color/desc"
+        android:layout_marginTop="@dimen/_8sdp"
         android:gravity="center"/>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -202,16 +202,15 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/expire_msg"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="@dimen/_18sdp"
+        android:layout_marginEnd="@dimen/_18sdp"
+        android:layout_marginTop="@dimen/_20sdp"
         android:background="@drawable/red_button"
         android:fontFamily="@font/intersemibold"
         android:gravity="center"
         android:text="@string/done"
         android:textColor="@color/white"
-        android:textSize="13sp"
-        app:cornerRadius="0dp" />
+        android:textSize="@dimen/_10ssp"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/navigateBtn"
@@ -219,16 +218,15 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/doneBtn"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="@dimen/_18sdp"
+        android:layout_marginEnd="@dimen/_18sdp"
+        android:layout_marginTop="@dimen/_12sdp"
         android:background="@drawable/rectangle"
         android:fontFamily="@font/intersemibold"
         android:gravity="center"
         android:text="@string/nearby_fuel_station"
         android:textColor="@color/white"
-        android:textSize="13sp"
-        app:cornerRadius="0dp" />
+        android:textSize="@dimen/_10ssp"/>
 
 
 
