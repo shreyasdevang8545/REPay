@@ -1,6 +1,6 @@
 package com.example.repay.dataClass
 
-data class myVoucherDataClass(
+data class MyVoucherDataClass(
     var vocherTitle:String,
     var vocherCode:String,
     var voucherDate:String,

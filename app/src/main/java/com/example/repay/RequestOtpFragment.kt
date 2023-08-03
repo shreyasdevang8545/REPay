@@ -9,10 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.repay.databinding.FragmentRequestOtpBinding
 
-class requestOtpFragment : Fragment(R.layout.fragment_request_otp) {
+class RequestOtpFragment : Fragment(R.layout.fragment_request_otp) {
     private var mainBinding: FragmentRequestOtpBinding? = null
     private val binding get() = mainBinding!!
-    private var requesOtpEnterFragment = requesOtpEnterFragment()
+    private var requesOtpEnterFragment = RequesOtpEnterFragment()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         mainBinding = FragmentRequestOtpBinding.inflate(inflater, container, false)

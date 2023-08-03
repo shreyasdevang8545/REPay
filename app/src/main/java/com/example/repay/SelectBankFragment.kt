@@ -2,33 +2,31 @@ package com.example.repay
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.repay.adapters.adapterSelectBank
-import com.example.repay.dataClass.selectBankDataClass
-import com.example.repay.dataClass.selectSubBankDataClass
+import com.example.repay.adapters.AdapterSelectBank
+import com.example.repay.dataClass.SelectBankDataClass
+import com.example.repay.dataClass.SelectSubBankDataClass
 import com.example.repay.databinding.FragmentSelectBankBinding
 import com.example.repay.databinding.ToolbarBinding
 
-class selectBankFragment : Fragment(R.layout.fragment_select_bank), adapterSelectBank.onItemClickListner{
+class SelectBankFragment : Fragment(R.layout.fragment_select_bank), AdapterSelectBank.onItemClickListner{
     private var mainBinding:FragmentSelectBankBinding?=null
     private var toolbar:ToolbarBinding?=null
     private val binding get() = mainBinding
-    private lateinit var adapter:adapterSelectBank
-    private var selectBank:List<selectBankDataClass> = emptyList()
-    private var emptyList= mutableListOf<selectBankDataClass>()
-    private var selectSubBankFragment = selectSubBankFragment()
-    private var myVoucherFragment = myVoucherFragment()
+    private lateinit var adapter:AdapterSelectBank
+    private var selectBank:List<SelectBankDataClass> = emptyList()
+    private var emptyList= mutableListOf<SelectBankDataClass>()
+    private var voucherCardView = VoucherCardview()
     private var alertDialog:AlertDialog.Builder?=null
 
     companion object{
-        lateinit var bank1:selectBankDataClass
-        lateinit var bank2:selectBankDataClass
+        lateinit var bank1:SelectBankDataClass
+        lateinit var bank2:SelectBankDataClass
     }
         override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -38,19 +36,19 @@ class selectBankFragment : Fragment(R.layout.fragment_select_bank), adapterSelec
             toolbar!!.backBtn.visibility = View.GONE
             toolbar!!.toolbarTitle.text = "Select Bank"
 
-            bank1 = selectBankDataClass("Axis Bank", R.drawable.splashlogo, subBankDetails = (selectSubBankDataClass("shreyas", "1233", R.drawable.sbi)))
-            bank2 = selectBankDataClass("State Bank of India", R.drawable.splashlogo, subBankDetails = (selectSubBankDataClass("state bank", "1111", R.drawable.sbi)))
+            bank1 = SelectBankDataClass("Axis Bank", R.drawable.splashlogo, subBankDetails = (SelectSubBankDataClass("shreyas", "1233", R.drawable.sbi)))
+            bank2 = SelectBankDataClass("State Bank of India", R.drawable.splashlogo, subBankDetails = (SelectSubBankDataClass("state bank", "1111", R.drawable.sbi)))
         emptyList.add(bank1)
         emptyList.add(bank2)
-        emptyList.add(selectBankDataClass("Hdfc Bank", R.drawable.splashlogo, subBankDetails = (selectSubBankDataClass("shreyas", "1233", R.drawable.sbi))))
-        emptyList.add(selectBankDataClass("ICICI Bank", R.drawable.splashlogo, subBankDetails = (selectSubBankDataClass("shreyas", "1233", R.drawable.sbi))))
-        emptyList.add(selectBankDataClass("Baroda Bank", R.drawable.splashlogo, subBankDetails = (selectSubBankDataClass("shreyas", "1233", R.drawable.sbi))))
-            emptyList.add(selectBankDataClass("Baroda Bank", R.drawable.splashlogo, subBankDetails = (selectSubBankDataClass("shreyas", "1233", R.drawable.sbi))))
+        emptyList.add(SelectBankDataClass("Hdfc Bank", R.drawable.splashlogo, subBankDetails = (SelectSubBankDataClass("shreyas", "1233", R.drawable.sbi))))
+        emptyList.add(SelectBankDataClass("ICICI Bank", R.drawable.splashlogo, subBankDetails = (SelectSubBankDataClass("shreyas", "1233", R.drawable.sbi))))
+        emptyList.add(SelectBankDataClass("Baroda Bank", R.drawable.splashlogo, subBankDetails = (SelectSubBankDataClass("shreyas", "1233", R.drawable.sbi))))
+            emptyList.add(SelectBankDataClass("Baroda Bank", R.drawable.splashlogo, subBankDetails = (SelectSubBankDataClass("shreyas", "1233", R.drawable.sbi))))
 
             selectBank = emptyList
         var recyclerView = binding?.recyclerView
         recyclerView?.layoutManager = LinearLayoutManager(requireContext())
-        adapter = adapterSelectBank(selectBank, this)
+        adapter = AdapterSelectBank(selectBank, this)
         recyclerView?.adapter = adapter
 
         adapter.notifyDataSetChanged()
@@ -73,7 +71,7 @@ class selectBankFragment : Fragment(R.layout.fragment_select_bank), adapterSelec
 
             var transactionManager = requireActivity().supportFragmentManager
         var transaction = transactionManager.beginTransaction()
-        transaction.replace(R.id.fragment_container, myVoucherFragment)
+        transaction.replace(R.id.fragment_container, voucherCardView)
         transaction.addToBackStack("null")
         transaction.commit()
 

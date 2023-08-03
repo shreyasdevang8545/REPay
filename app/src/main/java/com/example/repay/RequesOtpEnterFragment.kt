@@ -8,12 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.repay.databinding.FragmentEnterOtpBinding
-import com.example.repay.databinding.FragmentRequestOtpBinding
 
-class requesOtpEnterFragment : Fragment(R.layout.fragment_enter_otp) {
+class RequesOtpEnterFragment : Fragment(R.layout.fragment_enter_otp) {
     private var mainBinding: FragmentEnterOtpBinding? = null
     private val binding get() = mainBinding!!
-    private var selectBankFragment = selectBankFragment()
+    private var selectBankFragment = SelectBankFragment()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         mainBinding = FragmentEnterOtpBinding.inflate(inflater, container, false)

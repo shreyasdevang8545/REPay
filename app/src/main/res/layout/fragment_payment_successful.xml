@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#272727"
+    android:background="@drawable/dialog_bg"
     tools:context=".PaymentSuccessfulFragment">
 
 
@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/success"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="@dimen/_20sdp"/>
 
     <TextView
         android:id="@+id/tv_success_msg"
@@ -26,7 +26,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/payment_successful"
-        android:fontFamily="@font/interregular"
+        android:fontFamily="@font/montserratbold"
         android:textSize="20sp"
         android:textColor="@color/white"
         android:layout_marginTop="15dp"/>
@@ -61,7 +61,7 @@
         tools:text="@string/rs_1000"
         android:textSize="30sp"
         android:textColor="@color/white"
-        android:fontFamily="@font/interbold"
+        android:fontFamily="@font/montserratbold"
         android:layout_marginTop="10dp"
         />
 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -82,7 +82,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:text="@string/transaction_id"
-            android:fontFamily="@font/interregular"
+            android:fontFamily="@font/montserratregular"
             android:textSize="15sp"
             android:textColor="@color/white"
             android:layout_marginTop="15dp"/>
@@ -93,7 +93,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/rs_linear_layout"
             tools:text="10987654321"
-            android:fontFamily="@font/interregular"
+            android:fontFamily="@font/montserratregular"
             android:textSize="15sp"
             android:textColor="@color/white"
             android:layout_marginTop="15dp"/>
@@ -115,7 +115,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/voucher_code"
-        android:fontFamily="@font/interregular"
+        android:fontFamily="@font/montserratregular"
         android:textSize="15sp"
         android:textColor="@color/white"
         android:layout_marginTop="10dp"/>
@@ -127,7 +127,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="126897"
-        android:fontFamily="@font/interregular"
+        android:fontFamily="@font/montserratregular"
         android:textSize="15sp"
         android:textColor="@color/white"
         android:layout_marginTop="10dp"/>
@@ -150,7 +150,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/validity_date"
-        android:fontFamily="@font/interregular"
+        android:fontFamily="@font/montserratregular"
         android:textSize="12sp"
         android:textColor="#A7A7A7"
         android:layout_marginTop="10dp"/>
@@ -162,7 +162,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="30 Mar 2023"
-        android:fontFamily="@font/interregular"
+        android:fontFamily="@font/montserratregular"
         android:textSize="12sp"
         android:textColor="#A7A7A7"
         android:layout_marginTop="10dp"/>
@@ -176,7 +176,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/show_voucher"
-        android:fontFamily="@font/interregular"
+        android:fontFamily="@font/montserratregular"
         android:textSize="12sp"
         android:textColor="#A7A7A7"
         android:layout_marginTop="10dp"
@@ -190,7 +190,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/voucher_validity"
-        android:fontFamily="@font/interregular"
+        android:fontFamily="@font/montserratregular"
         android:textSize="12sp"
         android:textColor="#A7A7A7"
         android:layout_marginTop="10dp"
@@ -206,7 +206,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/red_button"
-        android:fontFamily="@font/intersemibold"
+        android:fontFamily="@font/montserratbold"
         android:gravity="center"
         android:text="@string/done"
         android:textColor="@color/white"
@@ -217,18 +217,20 @@
         android:id="@+id/navigateBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/doneBtn"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="15dp"
+        android:layout_marginBottom="@dimen/_20sdp"
         android:background="@drawable/rectangle"
-        android:fontFamily="@font/intersemibold"
+        android:fontFamily="@font/montserratbold"
         android:gravity="center"
         android:text="@string/nearby_fuel_station"
         android:textColor="@color/white"
         android:textSize="13sp"
-        app:cornerRadius="0dp" />
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/doneBtn" />
 
 
 

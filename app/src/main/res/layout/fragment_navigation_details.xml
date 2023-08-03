@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".navigation_details">
+    tools:context=".NavigationDetails">
 
     <LinearLayout
         android:id="@+id/fuel_found_layout"

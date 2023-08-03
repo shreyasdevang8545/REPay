@@ -4,10 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.example.repay.dataClass.myVoucherDataClass
+import com.example.repay.dataClass.MyVoucherDataClass
 import com.example.repay.databinding.ActivityMyvoucherItemsBinding
 
-class adapterMyVoucher(private var myVoucherList:List<myVoucherDataClass>): RecyclerView.Adapter<myVoucher>() {
+class AdapterMyVoucher(private var myVoucherList:List<MyVoucherDataClass>): RecyclerView.Adapter<myVoucher>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myVoucher {
         var itemView = ActivityMyvoucherItemsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return myVoucher(itemView)
@@ -26,7 +26,7 @@ class adapterMyVoucher(private var myVoucherList:List<myVoucherDataClass>): Recy
 
 class myVoucher(private var binding: ActivityMyvoucherItemsBinding) :ViewHolder(binding.root) {
 
-    fun bind(myVoucher: myVoucherDataClass) {
+    fun bind(myVoucher: MyVoucherDataClass) {
         binding.myVoucherTitle.text = myVoucher.vocherTitle
         binding.myvoucherCode.text = myVoucher.vocherCode
         binding.myVoucherDate.text = myVoucher.voucherDate

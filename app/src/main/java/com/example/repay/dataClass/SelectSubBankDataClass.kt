@@ -1,6 +1,6 @@
 package com.example.repay.dataClass
 
-data class selectSubBankDataClass(
+data class SelectSubBankDataClass(
     var bankName:String,
     var bankIfdcDes:String,
     var imageId:Int

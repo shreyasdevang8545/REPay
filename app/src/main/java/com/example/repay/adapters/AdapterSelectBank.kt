@@ -4,10 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.example.repay.dataClass.selectBankDataClass
+import com.example.repay.dataClass.SelectBankDataClass
 import com.example.repay.databinding.ActivitySelectbankItemsBinding
 
-class adapterSelectBank(private var selectBankList: List<selectBankDataClass>, private var itemClickListner: onItemClickListner): RecyclerView.Adapter<selectBankViewHolder>() {
+class AdapterSelectBank(private var selectBankList: List<SelectBankDataClass>, private var itemClickListner: onItemClickListner): RecyclerView.Adapter<selectBankViewHolder>() {
 
     interface onItemClickListner{
         fun onItemClick(item:Int){
@@ -34,7 +34,7 @@ class adapterSelectBank(private var selectBankList: List<selectBankDataClass>, p
 }
 
 class selectBankViewHolder(private var binding: ActivitySelectbankItemsBinding): ViewHolder(binding.root) {
-    fun bind(selectBank: selectBankDataClass) {
+    fun bind(selectBank: SelectBankDataClass) {
         binding.bankTitle.text = selectBank.bankName
         binding.imageViewItem.setImageResource(selectBank.imageUrl)
     }

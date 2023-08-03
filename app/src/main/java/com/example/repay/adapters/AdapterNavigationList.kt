@@ -4,10 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.example.repay.dataClass.navigationDataClass
+import com.example.repay.dataClass.NavigationDataClass
 import com.example.repay.databinding.ActivityNavigationItemsBinding
 
-class adapterNavigationList(private var navigationList:List<navigationDataClass>): RecyclerView.Adapter<NavigationListViewHolder>() {
+class AdapterNavigationList(private var navigationList:List<NavigationDataClass>): RecyclerView.Adapter<NavigationListViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NavigationListViewHolder {
         var itemView = ActivityNavigationItemsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return NavigationListViewHolder(itemView)
@@ -24,7 +24,7 @@ class adapterNavigationList(private var navigationList:List<navigationDataClass>
 }
 
 class NavigationListViewHolder(private var binding: ActivityNavigationItemsBinding) :ViewHolder(binding.root) {
-    fun bind(navigation: navigationDataClass) {
+    fun bind(navigation: NavigationDataClass) {
         binding.pumpImageView.setImageResource(navigation.imageId)
         binding.navigationTitle.text = navigation.pumpName
         binding.ratingNumber.text = navigation.rating

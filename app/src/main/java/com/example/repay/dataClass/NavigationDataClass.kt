@@ -1,6 +1,6 @@
 package com.example.repay.dataClass
 
-data class navigationDataClass(
+data class NavigationDataClass(
     var imageId:Int,
     var pumpName:String,
     val rating:String,

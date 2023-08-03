@@ -1,59 +1,100 @@
 package com.example.repay
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.repay.databinding.FragmentUpiPinBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class UpiPinFragment : Fragment(R.layout.fragment_upi_pin) {
+    private var mainBinding:FragmentUpiPinBinding?=null
+    private val binding get() = mainBinding
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        mainBinding = FragmentUpiPinBinding.bind(view)
 
-/**
- * A simple [Fragment] subclass.
- * Use the [UpiPinFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class UpiPinFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+        binding?.otpCode1?.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                //Do nothing
+            }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                //Do nothing
+            }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_upi_pin, container, false)
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment UpiPinFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            UpiPinFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+            override fun afterTextChanged(s: Editable?) {
+                if (s?.length == 1) {
+                    binding!!.otpCode2.requestFocus()
                 }
             }
+
+        })
+        binding?.otpCode2?.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                //Do nothing
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                //Do nothing
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                if (s?.length == 1) {
+                    binding!!.otpCode3.requestFocus()
+                }
+            }
+
+        })
+        binding?.otpCode3?.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                //Do nothing
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                //Do nothing
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                if (s?.length == 1) {
+                    binding!!.otpCode4.requestFocus()
+                }
+            }
+
+        })
+        binding?.otpCode4?.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                //Do nothing
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                //Do nothing
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                if (s?.length == 1) {
+                    binding!!.otpCode5.requestFocus()
+                }
+            }
+
+        })
+        binding?.otpCode5?.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                //Do nothing
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                //Do nothing
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                if (s?.length == 1) {
+                    binding!!.otpCode6.requestFocus()
+                }
+            }
+
+        })
     }
 }
