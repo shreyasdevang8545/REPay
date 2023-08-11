@@ -81,31 +81,56 @@
                 android:layout_marginBottom="10dp"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <TextView
-            android:id="@+id/transaction_amt"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/transaction_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/intersemibold"
-            android:text="\u20B9 1,000"
-            android:textColor="@color/white"
-            android:textSize="18sp"
             app:layout_constraintTop_toTopOf="@id/transaction_time"
             app:layout_constraintBottom_toBottomOf="@id/transaction_time"
             app:layout_constraintStart_toEndOf="@+id/transaction_time"
-            android:layout_marginStart="@dimen/_90sdp"
-            />
+            android:layout_marginStart="@dimen/_85sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserratbold"
+                android:text="@string/rs_symbol"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintTop_toTopOf="@id/transaction_time"
+                app:layout_constraintBottom_toBottomOf="@id/transaction_time"
+                app:layout_constraintStart_toEndOf="@+id/transaction_time"
+                />
+
+            <TextView
+                android:id="@+id/transaction_amt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserratbold"
+                tools:text="1,000"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintTop_toTopOf="@id/transaction_time"
+                app:layout_constraintBottom_toBottomOf="@id/transaction_time"
+                app:layout_constraintStart_toEndOf="@+id/transaction_time"
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
 
         <TextView
             android:id="@+id/transaction_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/interregular"
+            android:fontFamily="@font/montserratregular"
             android:text="@string/success"
             android:textColor="#78BA64"
             android:textSize="@dimen/_12ssp"
-            app:layout_constraintTop_toBottomOf="@+id/transaction_amt"
-            app:layout_constraintStart_toStartOf="@id/transaction_amt"
-            app:layout_constraintEnd_toEndOf="@id/transaction_amt"
+            app:layout_constraintTop_toBottomOf="@+id/transaction_layout"
+            app:layout_constraintStart_toStartOf="@id/transaction_layout"
+            app:layout_constraintEnd_toEndOf="@id/transaction_layout"
             android:layout_marginTop="5dp"
             />
         <ImageView

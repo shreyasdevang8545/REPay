@@ -8,6 +8,7 @@
     <include
         android:id="@+id/include"
         layout="@layout/toolbar"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

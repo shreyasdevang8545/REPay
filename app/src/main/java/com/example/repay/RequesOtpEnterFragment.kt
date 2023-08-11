@@ -3,6 +3,7 @@ package com.example.repay
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +14,8 @@ class RequesOtpEnterFragment : Fragment(R.layout.fragment_enter_otp) {
     private var mainBinding: FragmentEnterOtpBinding? = null
     private val binding get() = mainBinding!!
     private var selectBankFragment = SelectBankFragment()
+    private var myVoucherFragment=VoucherCardview()
+    private var oneTimePassword:String?=null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         mainBinding = FragmentEnterOtpBinding.inflate(inflater, container, false)
@@ -27,7 +30,8 @@ class RequesOtpEnterFragment : Fragment(R.layout.fragment_enter_otp) {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                //Do nothing
+                oneTimePassword+s
+                Log.e("otp", "$s")
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -45,7 +49,8 @@ class RequesOtpEnterFragment : Fragment(R.layout.fragment_enter_otp) {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                //Do nothing
+                oneTimePassword+s
+                Log.e("otp", "$s")
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -63,7 +68,8 @@ class RequesOtpEnterFragment : Fragment(R.layout.fragment_enter_otp) {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                //Do nothing
+                oneTimePassword+s
+                Log.e("otp", "$s")
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -81,7 +87,8 @@ class RequesOtpEnterFragment : Fragment(R.layout.fragment_enter_otp) {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                //Do nothing
+                oneTimePassword+s
+                Log.e("otp", "$s")
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -93,8 +100,10 @@ class RequesOtpEnterFragment : Fragment(R.layout.fragment_enter_otp) {
         binding.verifyBtn.setOnClickListener {
             var transactionManager = requireActivity().supportFragmentManager
             var transaction = transactionManager.beginTransaction()
-            transaction.replace(R.id.fragment_container, selectBankFragment)
+            transaction.replace(R.id.fragment_container, myVoucherFragment)
             transaction.commit()
+
+            Log.e("otp", "$oneTimePassword")
         }
 
     }

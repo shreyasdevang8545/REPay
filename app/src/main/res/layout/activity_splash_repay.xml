@@ -23,7 +23,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/interregular"
+        android:fontFamily="@font/montserratbold"
         android:lineHeight="24.2px"
         android:textFontWeight="600"
         android:layout_marginTop="40dp"

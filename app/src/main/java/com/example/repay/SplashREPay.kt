@@ -11,7 +11,7 @@ class SplashREPay : AppCompatActivity() {
         setContentView(R.layout.activity_splash_repay)
 
         Handler().postDelayed({
-            startActivity(Intent(this,otpRequestMainFragment::class.java))
+            startActivity(Intent(this,MainFragment::class.java))
             finish()
         }, 2000)
     }

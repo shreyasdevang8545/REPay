@@ -47,4 +47,8 @@
     <string name="rs_symbol">₹</string>
     <string name="myvoucher_desc">Voucher is valid for 48 hours. If expired,\namount will be refunded to your bank account</string>
     <string name="navigate_to_nearby_fuel_station">navigate to nearby fuel station</string>
+    <string name="title_activity_navigation_route">NavigationRoute</string>
+    <string name="select_bank">Select Bank</string>
+    <string name="select_account">Select Account</string>
+    <string name="transaction_history">Transaction History</string>
 </resources>

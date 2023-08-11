@@ -140,6 +140,7 @@
         app:cardElevation="10dp"
         app:cardMaxElevation="12dp"
         app:cardPreventCornerOverlap="true"
+        android:onClick="transactionHistory"
         app:layout_constraintTop_toBottomOf="@id/cv_my_vouchers"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

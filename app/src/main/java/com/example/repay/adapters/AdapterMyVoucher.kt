@@ -3,11 +3,17 @@ package com.example.repay.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.example.repay.R
 import com.example.repay.dataClass.MyVoucherDataClass
 import com.example.repay.databinding.ActivityMyvoucherItemsBinding
 
-class AdapterMyVoucher(private var myVoucherList:List<MyVoucherDataClass>): RecyclerView.Adapter<myVoucher>() {
+class AdapterMyVoucher(private var myVoucherList:List<MyVoucherDataClass>, private var itemClickListner: onItemClickListner): RecyclerView.Adapter<myVoucher>() {
+    interface onItemClickListner {
+        fun onItemClick(item:Int)
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myVoucher {
         var itemView = ActivityMyvoucherItemsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return myVoucher(itemView)
@@ -20,6 +26,9 @@ class AdapterMyVoucher(private var myVoucherList:List<MyVoucherDataClass>): Recy
     override fun onBindViewHolder(holder: myVoucher, position: Int) {
         var myVoucher = myVoucherList[position]
         holder.bind(myVoucher)
+        holder.itemView.setOnClickListener {
+            itemClickListner.onItemClick(position)
+        }
     }
 
 }
