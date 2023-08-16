@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import com.example.repay.databinding.FragmentEnterAmountBinding
 
@@ -19,6 +21,11 @@ class EnterAmountFragment : Fragment(R.layout.fragment_enter_amount) {
         super.onViewCreated(view, savedInstanceState)
         mainBinding = FragmentEnterAmountBinding.bind(view)
 
+        val toolbarSettings = requireActivity().findViewById<ImageView>(R.id.settingsBtn)
+        toolbarSettings.visibility = View.GONE
+        val toolbarTitle = requireActivity().findViewById<TextView>(R.id.toolbarTitle)
+        toolbarTitle.setText(R.string.new_voucher)
+
         binding?.proceedBtn?.setOnClickListener {
             var transactionManager = requireActivity().supportFragmentManager
             var transaction = transactionManager.beginTransaction()
@@ -27,15 +34,23 @@ class EnterAmountFragment : Fragment(R.layout.fragment_enter_amount) {
         }
 
         binding?.amt100?.setOnClickListener {
-            alertDialog = AlertDialog.Builder(requireContext())
-            var dialog = alertDialog!!.setView(R.layout.fragment_payment_successful)
-            dialog.create().show()
+            val amountEditField = binding!!.editTextFieldAmount
+            amountEditField.setText(R.string.rs100)
         }
 
         binding?.amt500?.setOnClickListener {
-            alertDialog = AlertDialog.Builder(requireContext())
-            var dialog = alertDialog!!.setView(R.layout.fragment_payment_failed)
-            dialog.create().show()
+            val amountEditField = binding!!.editTextFieldAmount
+            amountEditField.setText(R.string.rs500)
+        }
+
+        binding?.amt1000?.setOnClickListener {
+            val amountEditField = binding!!.editTextFieldAmount
+            amountEditField.setText(R.string.rs1000)
+        }
+
+        binding?.amt2000?.setOnClickListener {
+            val amountEditField = binding!!.editTextFieldAmount
+            amountEditField.setText(R.string.rs2000)
         }
     }
 }

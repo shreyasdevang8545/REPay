@@ -1,6 +1,5 @@
 package com.example.repay
 
-import android.media.Image
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
@@ -21,7 +20,9 @@ class VoucherCardview : Fragment(R.layout.activity_vouchers_cardview) {
 
         var toolbarBtn = requireActivity().findViewById<ImageView>(R.id.backBtn)
         var toolbarSettingsBtn = requireActivity().findViewById<ImageView>(R.id.settingsBtn)
-
+        val toolbarTitle = requireActivity().findViewById<TextView>(R.id.toolbarTitle)
+        toolbarTitle.setText(R.string.app_name)
+        toolbarSettingsBtn.setImageResource(R.drawable.settings)
         toolbarBtn.visibility = View.GONE
         toolbarSettingsBtn.visibility = View.VISIBLE
 
@@ -29,7 +30,7 @@ class VoucherCardview : Fragment(R.layout.activity_vouchers_cardview) {
             var transactionManager = requireActivity().supportFragmentManager
             var transaction = transactionManager.beginTransaction()
             transaction.replace(R.id.fragment_container, myVoucherFragment )
-            transaction.addToBackStack("null")
+            transaction.addToBackStack(null)
             transaction.commit()
         }
 
@@ -37,7 +38,7 @@ class VoucherCardview : Fragment(R.layout.activity_vouchers_cardview) {
             var transactionManager = requireActivity().supportFragmentManager
             var transaction = transactionManager.beginTransaction()
             transaction.replace(R.id.fragment_container, enterAmountFragment )
-            transaction.addToBackStack("null")
+            transaction.addToBackStack(null)
             transaction.commit()
         }
 
@@ -45,7 +46,7 @@ class VoucherCardview : Fragment(R.layout.activity_vouchers_cardview) {
             var transactionManager = requireActivity().supportFragmentManager
             var transaction = transactionManager.beginTransaction()
             transaction.replace(R.id.fragment_container, transactionHistoryFragment )
-            transaction.addToBackStack("null")
+            transaction.addToBackStack(null)
             transaction.commit()
         }
     }

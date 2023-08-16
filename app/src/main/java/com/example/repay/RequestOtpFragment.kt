@@ -3,16 +3,20 @@ package com.example.repay
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.example.repay.databinding.FragmentRequestOtpBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class RequestOtpFragment : Fragment(R.layout.fragment_request_otp) {
     private var mainBinding: FragmentRequestOtpBinding? = null
     private val binding get() = mainBinding!!
-    private var requesOtpEnterFragment = RequesOtpEnterFragment()
+    private val requesOtpEnterFragment = RequesOtpEnterFragment()
+    private var mAuth:FirebaseAuth?=null
+    private var TAG = RequestOtpFragment::class.java.simpleName
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         mainBinding = FragmentRequestOtpBinding.inflate(inflater, container, false)
@@ -21,6 +25,7 @@ class RequestOtpFragment : Fragment(R.layout.fragment_request_otp) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        mAuth = FirebaseAuth.getInstance()
         binding.generateOtp.isEnabled = false
 
 
@@ -42,11 +47,14 @@ class RequestOtpFragment : Fragment(R.layout.fragment_request_otp) {
         })
 
         binding.generateOtp.setOnClickListener {
-            var transactionManager = requireActivity().supportFragmentManager
-            var transaction = transactionManager.beginTransaction()
+            var mobileNumber = binding.editTextFieldPhonenumber.text.toString()
+
+            val transactionManager = requireActivity().supportFragmentManager
+            val transaction = transactionManager.beginTransaction()
             transaction.replace(R.id.fragment_container, requesOtpEnterFragment)
             transaction.commit()
         }
     }
+
 
 }
