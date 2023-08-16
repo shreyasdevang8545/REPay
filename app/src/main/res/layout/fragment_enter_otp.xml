@@ -119,6 +119,38 @@
             android:gravity="center"
             android:maxLength="1"
             android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/otpCode5"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="80dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/edittext_bg"
+            android:fontFamily="@font/interregular"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:inputType="numberPassword"
+            android:gravity="center"
+            android:maxLength="1"
+            android:textSize="30sp"
+            android:imeOptions="actionNext"/>
+
+        <EditText
+            android:id="@+id/otpCode6"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="80dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/edittext_bg"
+            android:fontFamily="@font/interregular"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:inputType="numberPassword"
+            android:gravity="center"
+            android:maxLength="1"
+            android:textSize="30sp"
+            android:imeOptions="actionNext"/>
     </LinearLayout>
 
     <TextView

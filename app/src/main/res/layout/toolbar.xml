@@ -2,15 +2,16 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/black"
-    android:layout_height="wrap_content">
+    android:layout_height="70dp">
 
     <ImageView
         android:id="@+id/backBtn"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="10dp"
-        android:src="@drawable/back_button"
+        android:layout_marginStart="20dp"
+        tools:src="@drawable/back_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,14 +20,25 @@
         android:id="@+id/toolbarTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/interbold"
-        android:padding="20dp"
-        android:text="@string/re_pay_toolbar_text"
+        android:fontFamily="@font/montserratbold"
+        android:text="@string/settings"
         android:textColor="@color/toolbar_title"
-        android:textSize="20dp"
+        android:textSize="20sp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/settingsBtn"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        tools:src="@drawable/settings"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbarTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.83"
+        app:layout_constraintStart_toEndOf="@+id/toolbarTitle"
+        app:layout_constraintTop_toTopOf="@+id/toolbarTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
