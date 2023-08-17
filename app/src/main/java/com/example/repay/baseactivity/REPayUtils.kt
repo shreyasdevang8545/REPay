@@ -1,7 +1,10 @@
 package com.example.repay.baseactivity
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.provider.Settings
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -10,8 +13,22 @@ import com.example.repay.R
 import com.example.repay.listener.DataListener
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
+import java.lang.Exception
 
-class REPayUtils:AppCompatActivity(), DataListener{
+class REPayUtils{
+    private var sharedPreferences:SharedPreferences?=null
+    private var editor:SharedPreferences.Editor?=null
+
+    companion object{
+        @SuppressLint("HardwareIds")
+        fun getDeviceId(context: Context): String? {
+            return try {
+                Settings.Secure.getString(context.contentResolver, Settings.Secure.ANDROID_ID)
+            } catch (e: Exception) {
+                null
+            }
+        }
+    }
     fun getAuth(): FirebaseAuth {
         val auth:FirebaseAuth = FirebaseAuth.getInstance()
         return auth
@@ -29,17 +46,6 @@ class REPayUtils:AppCompatActivity(), DataListener{
         Toast.makeText(context, message, Toast.LENGTH_LONG).show()
     }
 
-    fun onDataPassed(data: String, keyValue:String, fragment: Fragment) {
-        val bundle = Bundle()
-        bundle.putString(keyValue, data)
-        fragment.arguments = bundle
-
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, fragment)
-            .addToBackStack(null)
-            .commit()
-    }
-
     fun showLoading(context: Context): AlertDialog {
         var alertDialog = AlertDialog.Builder(context)
             .setView(R.layout.activity_loading)
@@ -51,10 +57,6 @@ class REPayUtils:AppCompatActivity(), DataListener{
 
     fun hideLoading(alertDialog: AlertDialog){
         alertDialog.dismiss()
-    }
-
-    override fun onDataPassed(data: String) {
-        TODO("Not yet implemented")
     }
 }
 

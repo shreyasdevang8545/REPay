@@ -16,6 +16,8 @@ import com.example.repay.apiInstance.ApiInterfaces
 import com.example.repay.apiInstance.ApiManager
 import com.example.repay.apiInstance.RetrofitInstance
 import com.example.repay.apiInstance.dataResponse
+import com.example.repay.baseactivity.REPayLogs
+import com.example.repay.baseactivity.REPayUtils
 import com.example.repay.dataClass.SelectBankDataClass
 import com.example.repay.databinding.FragmentSelectBankBinding
 import retrofit2.Call
@@ -26,16 +28,9 @@ class SelectBankFragment : Fragment(R.layout.fragment_select_bank), AdapterSelec
     private var mainBinding:FragmentSelectBankBinding?=null
     private val binding get() = mainBinding
     private lateinit var adapter:AdapterSelectBank
-    private var selectBank:List<SelectBankDataClass> = emptyList()
-    private var emptyList= mutableListOf<SelectBankDataClass>()
     private var voucherCardView = VoucherCardview()
-    private var alertDialog:AlertDialog.Builder?=null
     private var recyclerView:RecyclerView?=null
 
-    companion object{
-        lateinit var bank1:SelectBankDataClass
-        lateinit var bank2:SelectBankDataClass
-    }
         override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
             mainBinding = FragmentSelectBankBinding.bind(view)
@@ -46,19 +41,10 @@ class SelectBankFragment : Fragment(R.layout.fragment_select_bank), AdapterSelec
             toolbarBackbtn.visibility = View.GONE
             getBankDetails()
 
-//            bank1 = SelectBankDataClass("Axis Bank", R.drawable.splashlogo, subBankDetails = (SelectSubBankDataClass("shreyas", "1233", R.drawable.sbi)))
-//            bank2 = SelectBankDataClass("State Bank of India", R.drawable.splashlogo, subBankDetails = (SelectSubBankDataClass("state bank", "1111", R.drawable.sbi)))
-//        emptyList.add(bank1)
-//        emptyList.add(bank2)
-//        emptyList.add(SelectBankDataClass("Hdfc Bank", R.drawable.splashlogo, subBankDetails = (SelectSubBankDataClass("shreyas", "1233", R.drawable.sbi))))
-//        emptyList.add(SelectBankDataClass("ICICI Bank", R.drawable.splashlogo, subBankDetails = (SelectSubBankDataClass("shreyas", "1233", R.drawable.sbi))))
-//        emptyList.add(SelectBankDataClass("Baroda Bank", R.drawable.splashlogo, subBankDetails = (SelectSubBankDataClass("shreyas", "1233", R.drawable.sbi))))
-//            emptyList.add(SelectBankDataClass("Baroda Bank", R.drawable.splashlogo, subBankDetails = (SelectSubBankDataClass("shreyas", "1233", R.drawable.sbi))))
+            REPayLogs().error("deviceId", REPayUtils.getDeviceId(requireContext())!!)
 
-            selectBank = emptyList
 
             recyclerView = binding?.recyclerView
-        //adapter.notifyDataSetChanged()
     }
 
     override fun onItemClick(item: Int) {
@@ -91,28 +77,28 @@ class SelectBankFragment : Fragment(R.layout.fragment_select_bank), AdapterSelec
     private fun getBankDetails() {
             val retrofit = RetrofitInstance.buildService(ApiInterfaces::class.java)
 
-            retrofit.getBankDetails()?.enqueue(object : Callback<MutableList<SelectBankDataClass>?> {
+        retrofit.getBankDetails().enqueue(object : Callback<MutableList<SelectBankDataClass>?> {
 
-                override fun onFailure(
-                    call: Call<MutableList<SelectBankDataClass>?>,
-                    t: Throwable
-                ) {
-                    Log.e("saveClusterInfo", "${t.localizedMessage}")
-                }
+            override fun onFailure(
+                call: Call<MutableList<SelectBankDataClass>?>,
+                t: Throwable
+            ) {
+                t.localizedMessage?.let { Log.e("saveClusterInfo", it) }
+            }
 
-                override fun onResponse(
-                    call: Call<MutableList<SelectBankDataClass>?>,
-                    response: Response<MutableList<SelectBankDataClass>?>
-                ) {
-                    if (response.isSuccessful && response.body()!=null){
-                            recyclerView?.layoutManager = LinearLayoutManager(requireContext())
-                            adapter = AdapterSelectBank(response.body()!!)
-                            recyclerView?.adapter = adapter
-                    }else{
-                        Log.e("saveClusterInfo", "else calling")
-                    }
+            override fun onResponse(
+                call: Call<MutableList<SelectBankDataClass>?>,
+                response: Response<MutableList<SelectBankDataClass>?>
+            ) {
+                if (response.isSuccessful && response.body()!=null){
+                    recyclerView?.layoutManager = LinearLayoutManager(requireContext())
+                    adapter = AdapterSelectBank(response.body()!!)
+                    recyclerView?.adapter = adapter
+                }else{
+                    Log.e("saveClusterInfo", "else calling")
                 }
             }
-            )
+        }
+        )
         }
 }

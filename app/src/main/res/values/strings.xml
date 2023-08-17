@@ -58,4 +58,7 @@
     <string name="new_voucher">New Voucher</string>
     <string name="settings">Settings</string>
     <string name="please_wait">Please Wait</string>
+    <string name="upi">UPI</string>
+    <string name="bank_account">Bank Account</string>
+    <string name="account_setting">Account Settings</string>
 </resources>

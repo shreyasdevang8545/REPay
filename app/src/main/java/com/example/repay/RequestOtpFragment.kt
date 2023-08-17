@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.repay.baseactivity.REPayUtils
 import com.example.repay.databinding.FragmentRequestOtpBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -28,7 +29,6 @@ class RequestOtpFragment : Fragment(R.layout.fragment_request_otp) {
         mAuth = FirebaseAuth.getInstance()
         binding.generateOtp.isEnabled = false
 
-
         binding.editTextFieldPhonenumber.addTextChangedListener(object:TextWatcher{
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 //Do nothing
@@ -48,12 +48,21 @@ class RequestOtpFragment : Fragment(R.layout.fragment_request_otp) {
 
         binding.generateOtp.setOnClickListener {
             var mobileNumber = binding.editTextFieldPhonenumber.text.toString()
+            val args = Bundle()
+            args.putString("mobileNumber", mobileNumber)
+            requesOtpEnterFragment.setArguments(args)
 
             val transactionManager = requireActivity().supportFragmentManager
             val transaction = transactionManager.beginTransaction()
-            transaction.replace(R.id.fragment_container, requesOtpEnterFragment)
+            transaction.add(R.id.fragment_container, requesOtpEnterFragment)
+            //transaction.replace(R.id.fragment_container, requesOtpEnterFragment)
             transaction.commit()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        REPayUtils().showLoading(requireContext()).dismiss()
     }
 
 

@@ -14,23 +14,20 @@ class EnterAmountFragment : Fragment(R.layout.fragment_enter_amount) {
     private var mainBinding:FragmentEnterAmountBinding?=null
     private val binding get() = mainBinding
 
-    private var alertDialog:AlertDialog.Builder?=null
-
     private val upiPinFragment = UpiPinFragment()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mainBinding = FragmentEnterAmountBinding.bind(view)
+        val transaction = requireActivity().supportFragmentManager.beginTransaction()
 
         val toolbarSettings = requireActivity().findViewById<ImageView>(R.id.settingsBtn)
         toolbarSettings.visibility = View.GONE
         val toolbarTitle = requireActivity().findViewById<TextView>(R.id.toolbarTitle)
         toolbarTitle.setText(R.string.new_voucher)
-
+        val toolbarBack = requireActivity().findViewById<ImageView>(R.id.backBtn)
+        toolbarBack.visibility = View.GONE
         binding?.proceedBtn?.setOnClickListener {
-            var transactionManager = requireActivity().supportFragmentManager
-            var transaction = transactionManager.beginTransaction()
-            transaction.replace(R.id.fragment_container, upiPinFragment )
-            transaction.commit()
+            transaction.replace(R.id.fragment_container, upiPinFragment).addToBackStack(null).commit()
         }
 
         binding?.amt100?.setOnClickListener {

@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object RetrofitInstance {
     private val client=OkHttpClient.Builder().build()
     private val retrofit by lazy {
-        Retrofit.Builder().baseUrl("https://7395c2b0-2c0e-4d70-8557-f877bdc5025a.mock.pstmn.io")
+        Retrofit.Builder().baseUrl("https://9c3521ac-2d87-4dff-b404-e63e030e8f26.mock.pstmn.io")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()

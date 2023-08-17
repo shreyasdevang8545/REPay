@@ -18,12 +18,13 @@ class MyVoucherFragment : Fragment(R.layout.fragment_my_voucher), AdapterMyVouch
     private var adapter:AdapterMyVoucher?=null
     private var myVoucherQrDisplay = MyVoucherQrDisplay()
     private var myVoucherList = emptyList<MyVoucherDataClass>()
-    private var emptyList = mutableListOf<MyVoucherDataClass>()
+
     @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         mainBinding = FragmentMyVoucherBinding.bind(view)
+
+        val emptyList = mutableListOf<MyVoucherDataClass>()
 
         emptyList.add(MyVoucherDataClass("BPCL", "Code : 123", "Valid 123", "1000"))
         myVoucherList = emptyList

@@ -1,5 +1,6 @@
 package com.example.repay
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
@@ -16,21 +17,23 @@ class TransactionHistoryFragment : Fragment(R.layout.fragment_transaction_histor
     private val binding get() = mainBinding
     private var adapter:AdapterTransactionHistory?=null
     private var transactionHistoryList = emptyList<TransactionHistoryDataClass>()
-    private var emptyList = mutableListOf<TransactionHistoryDataClass>()
+
     private var myVoucherQrDisplay = MyVoucherQrDisplay()
+    @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mainBinding = FragmentTransactionHistoryBinding.bind(view)
+        val emptyList = mutableListOf<TransactionHistoryDataClass>()
 
-        var toolbarBtn = requireActivity().findViewById<ImageView>(R.id.backBtn)
-        var toolbarTitle = requireActivity().findViewById<TextView>(R.id.toolbarTitle)
-        var toolbarSettingsBtn = requireActivity().findViewById<ImageView>(R.id.settingsBtn)
+        val toolbarBtn = requireActivity().findViewById<ImageView>(R.id.backBtn)
+        val toolbarTitle = requireActivity().findViewById<TextView>(R.id.toolbarTitle)
+        val toolbarSettingsBtn = requireActivity().findViewById<ImageView>(R.id.settingsBtn)
 
         toolbarBtn.visibility = View.VISIBLE
         toolbarTitle.setText(R.string.transaction_history)
         toolbarSettingsBtn.visibility = View.GONE
 
-        var recyclerView = binding?.transactionHistoryRecyclerview
+        val recyclerView = binding?.transactionHistoryRecyclerview
 
         emptyList.add(TransactionHistoryDataClass(R.drawable.bpcl, "BPCL", "14 Jan 2023 10:15 PM", "182737373", "1000", 1))
         emptyList.add(TransactionHistoryDataClass(R.drawable.bpcl, "BPCL", "10 Aug 2023 3:15 PM", "182737454", "2000", 0))
@@ -45,8 +48,7 @@ class TransactionHistoryFragment : Fragment(R.layout.fragment_transaction_histor
     }
 
     override fun onItemClick(item: Int) {
-        var transactionManager = requireActivity().supportFragmentManager
-        var transaction = transactionManager.beginTransaction()
+        val transaction = requireActivity().supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, myVoucherQrDisplay)
         transaction.addToBackStack("null")
         transaction.commit()

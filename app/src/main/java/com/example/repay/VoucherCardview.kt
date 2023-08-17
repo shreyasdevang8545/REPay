@@ -13,6 +13,7 @@ class VoucherCardview : Fragment(R.layout.activity_vouchers_cardview) {
     private val enterAmountFragment = EnterAmountFragment()
     private val myVoucherFragment = MyVoucherFragment()
     private val transactionHistoryFragment = TransactionHistoryFragment()
+    private val settingFragment = SettingsFragment()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -25,6 +26,14 @@ class VoucherCardview : Fragment(R.layout.activity_vouchers_cardview) {
         toolbarSettingsBtn.setImageResource(R.drawable.settings)
         toolbarBtn.visibility = View.GONE
         toolbarSettingsBtn.visibility = View.VISIBLE
+
+        toolbarSettingsBtn.setOnClickListener {
+            var transactionManager = requireActivity().supportFragmentManager
+            var transaction = transactionManager.beginTransaction()
+            transaction.replace(R.id.fragment_container, settingFragment)
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
 
         binding?.cvMyVouchers?.setOnClickListener {
             var transactionManager = requireActivity().supportFragmentManager
