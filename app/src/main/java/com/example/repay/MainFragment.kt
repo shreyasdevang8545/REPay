@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.r.RequesOtpEnterFragment
 import com.example.repay.baseactivity.REPayUtils
 import com.example.repay.databinding.FragmentOtpRequestMainBinding
 import com.example.repay.databinding.ToolbarBinding
@@ -27,6 +28,7 @@ class MainFragment : AppCompatActivity(), DataListener {
         //Toolbar section to update the title and back button
         var textview = findViewById<TextView>(R.id.toolbarTitle)
         textview.setText(R.string.app_name)
+        val requestOtpFragment=RequestOtpFragment()
 
         var transactionManager = supportFragmentManager.beginTransaction()
         transactionManager.replace(R.id.fragment_container, requestOtpFragment)

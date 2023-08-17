@@ -1,13 +1,21 @@
-package com.example.repay
+package com.example.r
 
+import android.os.SystemClock
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Chronometer
+import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.repay.R
+import com.example.repay.SelectBankFragment
+import com.example.repay.VoucherCardview
 import com.example.repay.baseactivity.REPayLogs
 import com.example.repay.baseactivity.REPayUtils
 import com.example.repay.databinding.FragmentEnterOtpBinding
@@ -32,6 +40,7 @@ class RequesOtpEnterFragment : Fragment(R.layout.fragment_enter_otp) {
     private var isResend: Boolean? = null
     private var TAG = RequesOtpEnterFragment::class.java.simpleName
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -44,6 +53,21 @@ class RequesOtpEnterFragment : Fragment(R.layout.fragment_enter_otp) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         auth = FirebaseAuth.getInstance()
+        var timer=view.findViewById<TextView>(R.id.tv_timer)
+        var tv_resend=view.findViewById<TextView>(R.id.tv_resend_otp)
+
+        object:CountDownTimer(60000,1000){
+            override fun onTick(millisUntilFinished:Long) {
+                timer.setText("00:"+(millisUntilFinished/1000).toString())
+            }
+
+            override fun onFinish() {
+                //Toast.makeText(context,"timer up",Toast.LENGTH_SHORT).show()
+                tv_resend.setText("Resend OTP")
+                timer.setText("")
+
+            }
+        }.start()
 
         REPayLogs().error(TAG, "View Created")
 
@@ -222,4 +246,5 @@ class RequesOtpEnterFragment : Fragment(R.layout.fragment_enter_otp) {
     private fun signInWithCredential(credential: PhoneAuthCredential) {
 
     }
+
 }
