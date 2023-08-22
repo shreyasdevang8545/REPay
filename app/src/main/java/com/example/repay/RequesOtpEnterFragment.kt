@@ -1,6 +1,5 @@
 package com.example.r
 
-import android.os.SystemClock
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.text.Editable
@@ -9,9 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Chronometer
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.repay.R
 import com.example.repay.SelectBankFragment

@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.repay.adapters.AdapterSelectBank
 import com.example.repay.apiInstance.ApiInterfaces
-import com.example.repay.apiInstance.ApiManager
 import com.example.repay.apiInstance.RetrofitInstance
-import com.example.repay.apiInstance.dataResponse
+import com.example.repay.apicall.CheckVPA
+import com.example.repay.dataClass.CheckVPADataClass
 import com.example.repay.dataClass.SelectBankDataClass
 import com.example.repay.databinding.FragmentSelectBankBinding
 import retrofit2.Call
@@ -59,6 +59,7 @@ class SelectBankFragment : Fragment(R.layout.fragment_select_bank), AdapterSelec
 
             recyclerView = binding?.recyclerView
         //adapter.notifyDataSetChanged()
+
     }
 
     override fun onItemClick(item: Int) {
@@ -91,28 +92,28 @@ class SelectBankFragment : Fragment(R.layout.fragment_select_bank), AdapterSelec
     private fun getBankDetails() {
             val retrofit = RetrofitInstance.buildService(ApiInterfaces::class.java)
 
-            retrofit.getBankDetails()?.enqueue(object : Callback<MutableList<SelectBankDataClass>?> {
+        retrofit.getBankDetails().enqueue(object : Callback<MutableList<SelectBankDataClass>?> {
 
-                override fun onFailure(
-                    call: Call<MutableList<SelectBankDataClass>?>,
-                    t: Throwable
-                ) {
-                    Log.e("saveClusterInfo", "${t.localizedMessage}")
-                }
+            override fun onFailure(
+                call: Call<MutableList<SelectBankDataClass>?>,
+                t: Throwable
+            ) {
+                Log.e("saveClusterInfo", "${t.localizedMessage}")
+            }
 
-                override fun onResponse(
-                    call: Call<MutableList<SelectBankDataClass>?>,
-                    response: Response<MutableList<SelectBankDataClass>?>
-                ) {
-                    if (response.isSuccessful && response.body()!=null){
-                            recyclerView?.layoutManager = LinearLayoutManager(requireContext())
-                            adapter = AdapterSelectBank(response.body()!!)
-                            recyclerView?.adapter = adapter
-                    }else{
-                        Log.e("saveClusterInfo", "else calling")
-                    }
+            override fun onResponse(
+                call: Call<MutableList<SelectBankDataClass>?>,
+                response: Response<MutableList<SelectBankDataClass>?>
+            ) {
+                if (response.isSuccessful && response.body()!=null){
+                    recyclerView?.layoutManager = LinearLayoutManager(requireContext())
+                    adapter = AdapterSelectBank(response.body()!!)
+                    recyclerView?.adapter = adapter
+                }else{
+                    Log.e("saveClusterInfo", "else calling")
                 }
             }
-            )
+        }
+        )
         }
 }
